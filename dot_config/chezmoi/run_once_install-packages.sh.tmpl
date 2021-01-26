@@ -1,0 +1,7 @@
+{{ if eq .chezmoi.os "linux" -}}
+#!/bin/sh
+{{ else if eq .chezmoi.os "darwin" -}}
+    #!/bin/sh
+    #/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    while read i; do brew install $i; done < ~/org/pages/apps.md
+{{ end -}}
