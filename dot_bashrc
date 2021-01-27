@@ -1,0 +1,29 @@
+HISTCONTROL=ignoreboth
+HISTFILESIZE=1024
+set -o vi
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+export PATH=$HOME/bin:/usr/local/bin:$PATH:/usr/local/sbin:$PATH
+export PATH=/usr/local/opt/python/libexec/bin:$PATH
+export PATH=/usr/local/opt/node@10/bin:$PATH
+export MANPATH="/usr/local/man:$MANPATH"
+export HOMEBREW_NO_AUTO_UPDATE=1
+
+alias reload="source ~/.zshrc"
+alias vimc='vim --clean'
+alias vpn='sudo brew services restart openvpn'
+alias vpns='sudo brew services stop openvpn'
+alias nvim='nvim -u ~/.vimrc'
+alias firefox="/Applications/Firefox.app/Contents/MacOS/firefox"
+alias icloud="/Users/arsenty/Library/Mobile\ Documents/"
+alias cddoc="cd /Users/arsenty/Library/Mobile\ Documents/iCloud~co~fluder~fsnotes/Documents"
+alias cdorg="cd /Users/arsenty/Library/Mobile\ Documents/iCloud~com~appsonthemove~beorg/Documents"
+alias cdj="cd ~/Sites/journal/"
+
+# Upload last screnshot
+alias scps='file="$(ls -t ~/Desktop/ | head -n1)";\
+    echo http://work.arsenty.ru/screenshots/$file | sed "s/ /\%20/g" | pbcopy;\
+    scp ~/Desktop/"$file" public:/var/www/html/screenshots/;\
+    tput bel;'
