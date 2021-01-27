@@ -96,7 +96,7 @@ let g:netrw_banner = 0
 let netrw_browse_split = 4
 let g:netrw_winsize = 20
 
-"CtrlP
+"Plugin 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_working_path_mode = 'ra'
 "let g:ctrlp_working_path_mode=0
 let g:ctrlp_custom_ignore = {
@@ -132,6 +132,7 @@ augroup END
 "    try
 "    let s:uname = system("uname -s")
     "if s:uname == "Darwin\n"
+    "Plugin 'joshdick/onedark.vim'
     colorscheme onedark
 
     "Plugin 'thaerkh/vim-workspace'
@@ -183,7 +184,7 @@ augroup END
     cnoreabbrev Ack Ack! 
     nnoremap <leader>a :Ack!<Space>
 
-    "Search through open buffers "Plugin 'jeetsukumaran/vim-buffersaurus'
+    "Plugin 'jeetsukumaran/vim-buffersaurus' Search through open buffers
     nnoremap <leader>b :Bsgrep<Space>
     
     "endif
@@ -192,4 +193,19 @@ augroup END
 "    endtry
 "endif
 
+"Plugin 'dhruvasagar/vim-dotoo'
 autocmd BufRead,BufNewFile *.org set filetype=dotoo
+"
+"Plugin 'tpope/vim-fugitive'
+"Plugin 'airblade/vim-gitgutter'
+"Plugin 'digitaltoad/vim-pug'
+"Plugin 'tpope/vim-surround'
+"Plugin 'christoomey/vim-tmux-navigator'
+"Plugin 'thaerkh/vim-workspace'
+"Plugin 'mattn/emmet-vim'
+"Plugin 'roman/golden-ratio'
+"Plugin 'yggdroot/indentline'
+"Plugin 'scrooloose/nerdcommenter'
+"Plugin 'easymotion/vim-easymotion'
+"Plugin 'tpope/vim-speeddating'
+"Plugin 'posva/vim-vue'
