@@ -1,0 +1,19 @@
+Host *
+  ServerAliveInterval 2400
+
+Host gift
+  Hostname {{ .gift.host }}
+  User  {{ .gift.user }}
+  Port 44262
+  #ForwardAgent yes
+
+Host rss
+  Hostname {{ .rss.host }}
+  User  {{ .rss.user }}
+  ForwardAgent yes
+  RequestTTY yes
+  #RemoteCommand tmux a
+
+Host pub 
+  Hostname {{ .pub.host }} 
+  User root
