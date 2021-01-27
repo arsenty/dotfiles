@@ -1,0 +1,5 @@
+--ignore-dir=.undodir
+--ignore-dir=.git
+--ignore-dir=node_modules
+--ignore-case
+--group
