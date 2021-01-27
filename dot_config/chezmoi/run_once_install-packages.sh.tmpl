@@ -3,5 +3,16 @@
 {{ else if eq .chezmoi.os "darwin" -}}
     #!/bin/sh
     #/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    while read i; do brew install $i; done < ~/org/pages/apps.md
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+    #brew tap caskroom/cask
+    regex='- [a-z]'
+    while read line
+    do
+        if [[ $line =~ $regex ]]
+            then brew install $(cut -c 2- <<<"$line")
+        fi
+    done < ~/org/pages/apps.md
+
+    #defaults write com.apple.Safari IncludeDebugMenu -boolean true
 {{ end -}}
