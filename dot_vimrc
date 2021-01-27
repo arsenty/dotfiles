@@ -1,0 +1,195 @@
+set encoding=UTF-8
+syntax on
+set splitright
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set list
+set history=1000
+set noshowmode
+set number
+filetype plugin indent on
+"au FileType php setl sw=4 sts=4 autoindent et
+set runtimepath^=~/.vim/pack/start/**
+"set undodir=~/.cache/vim/undo/
+"set backupdir=~/.cache/vim/backup/
+"set directory=~/.cache/vim/swp/
+set nocompatible              " be iMproved, required
+set hidden
+set breakindent
+filetype on   " required
+set iminsert=0
+set imsearch=0
+set helplang=ru
+"set keymap=russian-jcukenwin
+set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+set ignorecase
+set smartcase
+"/copyright      " Case insensitive
+"/Copyright      " Case sensitive
+"/copyright\C    " Case sensitive
+"/Copyright\c    " Case insensitive
+
+let mapleader=","
+let maplocalleader = "\\"
+
+"Esc for exit terminal
+"tnoremap <Esc> <C-\><C-n>
+
+" copy and paste
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <ESC>"+pa
+
+"Vim close buffer but not split window
+nmap ,d :b#<bar>bd#<CR>
+
+let g:BASH_Ctrl_j = 'off'
+nnoremap <C-j>j :bnext<CR>
+nnoremap <C-k>k :bprev<CR>
+"nmap <C-l>l :tabnext<CR>
+"nmap <C-h>h :tabprev<CR>
+
+" Insert newline without entering insert mode
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
+
+" ,f Recursive search in current directory with current word
+nnoremap <Leader>f :<C-u>execute "Ack " . expand("<cword>") <Bar> cw<CR>
+" ,s Shortcut for :%s//
+nnoremap <leader>s :<C-u>%s//<left>
+vnoremap <leader>s :s//<left>
+
+" ,v Open the .vimrc in a new tab
+nnoremap <leader>v :<C-u>tabedit $MYVIMRC<CR>
+
+" Ctrl+s
+noremap <C-s> <esc>:w<CR>
+inoremap <C-s> <esc>:w<CR>
+map <f2> <esc>:w<cr>:echo "Файл сохранен!"<cr>
+imap <f2> <esc>:w<cr>:echo "Файл сохранен!"<cr>
+
+" Switch splits
+nnoremap <C-h> <C-W>h
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-l> <C-W>l
+
+" ,bl Show buffers
+nnoremap <Leader>bl :CtrlPBuffer<cr>
+
+" ,bp " Go to prev buffer
+nnoremap <Leader>bp :<C-u>bp<cr>
+nnoremap <C-S-j> :bp<cr>
+" ,bn " Go to next buffer
+nnoremap <Leader>bn :<C-u>bn<cr>
+nnoremap <C-S-k> :bn<cr>
+
+" <Esc><Esc> Clear the search highlight in Normal mode
+nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
+
+"Netrw Directory Listing
+nnoremap <leader>n :Vex <CR>
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+let netrw_browse_split = 4
+let g:netrw_winsize = 20
+
+"CtrlP
+let g:ctrlp_working_path_mode = 'ra'
+"let g:ctrlp_working_path_mode=0
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/](node_modules|.git|backend|console|common)$',
+    \ 'file': '\v\.(exe|so|dll)$',
+    \ 'link': '',
+    \ }
+let g:ctrlp_switch_buffer = 'Et'
+nnoremap <leader><space> :CtrlPBuffer<cr>
+
+" ,r Find and replace in all open buffers http://vim.wikia.com/wiki/VimTip382
+function! Replace()
+    let s:word = input("Replace " . expand('<cword>') . " with:")
+    :exe 'bufdo! %s/\<' . expand('<cword>') . '\>/' . s:word . '/gce'
+    :unlet! s:word
+endfunction
+nnoremap <Leader>r :<C-u>call Replace()<CR>
+
+" Перезагрузка файла при потере фокуса буфера и возвращении
+au FocusGained,BufEnter * :silent! !
+" Сохранение при потере
+"au FocusLost,WinLeave * :silent! w
+
+" Autoreload .vimrc
+augroup myvimrc
+  au!
+  au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+augroup END
+
+" If there are any machine-specific tweaks for Vim, load them from the following file.
+"if has("gui_running")
+"if has("unix")
+"    try
+"    let s:uname = system("uname -s")
+    "if s:uname == "Darwin\n"
+    colorscheme onedark
+
+    "Plugin 'thaerkh/vim-workspace'
+    let g:workspace_session_name = 'session.vim'
+    let g:workspace_session_directory = $HOME . '/.vim/sessions/'
+    let g:workspace_autosave = 1
+    nnoremap <leader>s :ToggleWorkspace<CR>
+
+    "Git
+    nmap <space>gb :Gblame<cr>
+    nmap <space>gs :Gstatus<cr>
+    nmap <space>gc :Gcommit -v<cr>
+    nmap <space>ga :Git add -p<cr>
+    nmap <space>gm :Gcommit --amend<cr>
+    nmap <space>gp :Gpush<cr>
+    nmap <space>gd :Gdiff<cr>
+    nmap <space>gw :Gwrite<cr>
+
+    "Plugin 'scrooloose/syntastic'
+    let g:syntastic_javascript_checkers = ['eslint']
+    let g:syntastic_javascript_eslint_exec = 'eslint_d'
+    let g:syntastic_pug_checkers = ['pug_lint']
+    let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
+    "let g:syntastic_css_csslint_args = "--warnings=none"
+    let g:syntastic_html_checkers = ['htmltidy'] "HTML linting
+    let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
+    let g:syntastic_sh_checkers = ['shellcheck'] "Shell script / bash linting
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    "let g:syntastic_check_on_open = 1
+    "let g:syntastic_check_on_wq = 0
+    "let g:syntastic_error_symbol = '✗'
+    "let g:syntastic_warning_symbol = '!'
+    "let g:syntastic_style_error_symbol = '⚡'
+    "let g:syntastic_aggregate_errors = 1
+
+    "Plugin 'maksimr/vim-jsbeautify'
+    map <c-f> :call JsBeautify()<cr>
+    autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+    autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
+    autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
+    autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+    autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr
+
+    "Plugin 'mileszs/ack.vim'
+    cnoreabbrev Ack Ack! 
+    nnoremap <leader>a :Ack!<Space>
+
+    "Search through open buffers "Plugin 'jeetsukumaran/vim-buffersaurus'
+    nnoremap <leader>b :Bsgrep<Space>
+    
+    "endif
+"    catch
+"      " No such file? No problem; just ignore it.
+"    endtry
+"endif
+
+autocmd BufRead,BufNewFile *.org set filetype=dotoo
