@@ -34,7 +34,7 @@ let mapleader=","
 let maplocalleader = "\\"
 
 "Esc for exit terminal
-"tnoremap <Esc> <C-\><C-n>
+tnoremap <Esc> <C-\><C-n>
 
 " copy and paste
 vmap <C-c> "+yi
