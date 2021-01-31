@@ -76,9 +76,6 @@ nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
 
-" ,bl Show buffers
-nnoremap <Leader>bl :CtrlPBuffer<cr>
-
 " ,bp " Go to prev buffer
 nnoremap <Leader>bp :<C-u>bp<cr>
 nnoremap <C-S-j> :bp<cr>
@@ -105,7 +102,8 @@ let g:ctrlp_custom_ignore = {
     \ 'link': '',
     \ }
 let g:ctrlp_switch_buffer = 'Et'
-nnoremap <leader><space> :CtrlPBuffer<cr>
+" ,bl Show buffers
+nnoremap <Leader>bl :CtrlPBuffer<cr>
 
 " ,r Find and replace in all open buffers http://vim.wikia.com/wiki/VimTip382
 function! Replace()
