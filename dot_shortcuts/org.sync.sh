@@ -6,5 +6,7 @@ if [[ -z `git status --porcelain` ]]; then
     git pull
 else
     # Changes
-    git add . && git commit -m 'sync' && git pull && git push
+    git add . && git commit -m 'sync'
+    git pull
+    git push
 fi
