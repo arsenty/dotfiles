@@ -30,6 +30,7 @@ set smartcase
 "/copyright\C    " Case sensitive
 "/Copyright\c    " Case insensitive
 set clipboard=unnamed,unnamedplus
+set showcmd
 
 let mapleader=","
 let maplocalleader = "\\"
