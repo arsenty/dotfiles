@@ -46,12 +46,6 @@ imap <C-v> <ESC>"+pa
 "Vim close buffer but not split window
 nmap ,d :b#<bar>bd#<CR>
 
-let g:BASH_Ctrl_j = 'off'
-nnoremap <C-j>j :bnext<CR>
-nnoremap <C-k>k :bprev<CR>
-"nmap <C-l>l :tabnext<CR>
-"nmap <C-h>h :tabprev<CR>
-
 " Insert newline without entering insert mode
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
@@ -77,12 +71,14 @@ nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
 
+" Buffers navigation
+let g:BASH_Ctrl_j = 'off'
 " ,bp " Go to prev buffer
 nnoremap <Leader>bp :<C-u>bp<cr>
-nnoremap <C-S-j> :bp<cr>
+nnoremap <C-k>k :bprev<CR>
 " ,bn " Go to next buffer
 nnoremap <Leader>bn :<C-u>bn<cr>
-nnoremap <C-S-k> :bn<cr>
+nnoremap <C-j>j :bnext<CR>
 
 " <Esc><Esc> Clear the search highlight in Normal mode
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
