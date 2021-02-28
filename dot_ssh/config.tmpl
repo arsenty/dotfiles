@@ -7,12 +7,16 @@ Host gift
   Port 44262
   #ForwardAgent yes
 
-Host rss
-  Hostname {{ .rss.host }}
-  User  {{ .rss.user }}
+Host org
+  Hostname {{ .org.host }}
+  User  {{ .org.user }}
   ForwardAgent yes
   RequestTTY yes
   #RemoteCommand tmux a
+
+Host rss
+  Hostname {{ .rss.host }}
+  User  {{ .rss.user }}
 
 Host pub 
   Hostname {{ .pub.host }} 
