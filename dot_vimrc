@@ -208,3 +208,4 @@ autocmd BufRead,BufNewFile *.org set filetype=dotoo
 
 "Plugin 'itchyny/calendar.vim'
 let g:calendar_diary = "~/Documents"
+autocmd BufRead,BufNewFile */journals/*.md :Calendar
