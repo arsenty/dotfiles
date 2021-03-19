@@ -1,3 +1,66 @@
+[submodule "dot_vim/pack/start/onedark.vim"]
+	path = dot_vim/pack/start/onedark.vim
+	url = https://github.com/joshdick/onedark.vim.git
+[submodule "dot_vim/pack/start/vim-workspace"]
+	path = dot_vim/pack/start/vim-workspace
+	url = https://github.com/thaerkh/vim-workspace.git
+[submodule "dot_vim/pack/start/syntastic"]
+	path = dot_vim/pack/start/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule "dot_vim/pack/start/vim-jsbeautify"]
+	path = dot_vim/pack/start/vim-jsbeautify
+	url = https://github.com/maksimr/vim-jsbeautify.git
+[submodule "dot_vim/pack/start/ack.vim"]
+	path = dot_vim/pack/start/ack.vim
+	url = https://github.com/mileszs/ack.vim.git
+[submodule "dot_vim/pack/start/vim-buffersaurus"]
+	path = dot_vim/pack/start/vim-buffersaurus
+	url = https://github.com/jeetsukumaran/vim-buffersaurus.git
+[submodule "dot_vim/pack/start/vim-dotoo"]
+	path = dot_vim/pack/start/vim-dotoo
+	url = https://github.com/dhruvasagar/vim-dotoo.git
+[submodule "dot_vim/pack/start/vim-fugitive"]
+	path = dot_vim/pack/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "dot_vim/pack/start/vim-gitgutter"]
+	path = dot_vim/pack/start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "dot_vim/pack/start/vim-pug"]
+	path = dot_vim/pack/start/vim-pug
+	url = https://github.com/digitaltoad/vim-pug.git
+[submodule "dot_vim/pack/start/vim-surround"]
+	path = dot_vim/pack/start/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "dot_vim/pack/start/vim-tmux-navigator"]
+	path = dot_vim/pack/start/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator.git
+[submodule "dot_vim/pack/start/emmet-vim"]
+	path = dot_vim/pack/start/emmet-vim
+	url = https://github.com/mattn/emmet-vim.git
+[submodule "dot_vim/pack/start/golden-ratio"]
+	path = dot_vim/pack/start/golden-ratio
+	url = https://github.com/roman/golden-ratio.git
+[submodule "dot_vim/pack/start/indentline"]
+	path = dot_vim/pack/start/indentline
+	url = https://github.com/yggdroot/indentline.git
+[submodule "dot_vim/pack/start/nerdcommenter"]
+	path = dot_vim/pack/start/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "dot_vim/pack/start/vim-easymotion"]
+	path = dot_vim/pack/start/vim-easymotion
+	url = https://github.com/easymotion/vim-easymotion.git
+[submodule "dot_vim/pack/start/vim-speeddating"]
+	path = dot_vim/pack/start/vim-speeddating
+	url = https://github.com/tpope/vim-speeddating.git
+[submodule "dot_vim/pack/start/vim-vue"]
+	path = dot_vim/pack/start/vim-vue
+	url = https://github.com/posva/vim-vue.git
+[submodule "dot_vim/pack/start/calendar.vim"]
+	path = dot_vim/pack/start/calendar.vim
+	url = https://github.com/itchyny/calendar.vim.git
 [submodule "dot_vim/pack/start/vim-markdown"]
 	path = dot_vim/pack/start/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown.git
+[submodule "dot_vim/pack/start/ctrlp.vim"]
+	path = dot_vim/pack/start/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
