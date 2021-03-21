@@ -8,23 +8,8 @@
     brew tap caskroom/cask
 
     #Install Apps
-    regex='- [a-z]'
-    while read line
-    do
-        if [[ $line =~ $regex ]]
-            then brew install $(cut -c 2- <<<"$line")
-        fi
-    done < ~/org/pages/apps.md
-
-    #Enable Developer menu in Safari
-    defaults write com.apple.Safari IncludeDebugMenu -boolean true
-    
-    # Install ViM packages
-    regex='"Plugin'
-    while read line
-    do
-        if [[ $line =~ $regex ]]
-            then cd ~/.vim/pack/start; git clone https://github.com/$(echo "$line" | cut -d "'" -f2 | cut -d "'" -f1)
-        fi
-    done < ~/.vimrc
+    brew install $(grep -e "- " < ~/org/pages/apps.md | sed -e 's/- //g' | tr '\n' ' ')
 {{ end -}}
+
+#Install ViM packages
+sh ~/.shortcuts/git-submodule.sh
