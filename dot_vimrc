@@ -205,7 +205,3 @@ autocmd BufRead,BufNewFile *.org set filetype=dotoo
 "Plugin 'easymotion/vim-easymotion'
 "Plugin 'tpope/vim-speeddating'
 "Plugin 'posva/vim-vue'
-
-"Plugin 'itchyny/calendar.vim'
-let g:calendar_diary = "~/Documents"
-autocmd BufRead,BufNewFile */journals/*.md :Calendar
