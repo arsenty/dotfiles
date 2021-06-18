@@ -5,4 +5,4 @@ then
 else
     yesterday='-d yesterday'
 fi
-perl -i -pe "s/SCHEDULED: <`date $yesterday '+%Y-%m-%d %a'`/SCHEDULED: <`date '+%Y-%m-%d %a'`/g" ~/org/pages/*.org
+perl -i -pe "s/SCHEDULED: <`date $yesterday '+%Y-%m-%d %a'`/SCHEDULED: <`date '+%Y-%m-%d %a'`/g" ~/org/habit*

@@ -12,3 +12,4 @@ HIST_STAMPS="dd/mm/yyyy"
 plugins=(git ssh-agent z tmux osx tmuxinator colorize colored-man-pages history gitignore fancy-ctrl-z themes web-search vi-mode )
 #source ~/.bash_profile
 source $ZSH/oh-my-zsh.sh
+export PATH="/usr/local/opt/docker-virtualbox/bin:$PATH"

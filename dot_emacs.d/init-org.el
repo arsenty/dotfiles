@@ -9,17 +9,18 @@
 (setq org-refile-targets '((nil :maxlevel . 3) (org-agenda-files :maxlevel . 3)))
 (setq org-todo-keywords '((sequence "NEXT" "HOLD" "TODO(t@)" "|" "DONE(d@)" "FAIL(f@)")))
 (setq org-default-notes-file "~/org/index.org") 
-(setq initial-buffer-choice (concat "~/org/" (format-time-string "%Y_%m_%d.org")))
+;(setq initial-buffer-choice (concat "~/org/journals/" (format-time-string "%Y_%m_%d.org")))
+(setq initial-buffer-choice (concat "~/org/journals/" (format-time-string "%YW%W.org")))
 ;(setq initial-buffer-choice (concat "~/org/index.org"))
 
 (setq org-capture-templates
-   `(("t" "Todo" entry (file, (concat "~/org/" (format-time-string "%Y_%m_%d.org")))
+   `(("t" "Todo" entry (file, (concat "~/org/journals/" (format-time-string "%Y_%m_%d.org")))
         "* TODO %?\n%<SHEDULED: <%Y-%m-%d>>")
-    ("j" "Journal" entry (file, (concat "~/org/" (format-time-string "%Y_%m_%d.org")))
+    ("j" "Journal" entry (file, (concat "~/org/journals/" (format-time-string "%Y_%m_%d.org")))
         "* %<%H:%M> %?")))
 
 (global-set-key "\C-cr" 'org-capture)
-(global-set-key (kbd "C-c o") (lambda () (interactive) (find-file (concat "~/org/" (format-time-string "%Y_%m_%d.org")))))
+(global-set-key (kbd "C-c o") (lambda () (interactive) (find-file (concat "~/org/journals/" (format-time-string "%Y_%m_%d.org")))))
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
@@ -47,3 +48,6 @@
       ;(insert (format "* [[%s::*%s]]\n" file heading)))))
 
 (provide 'init-org)
+
+(global-set-key (kbd "C-c p") 'switch-to-prev-buffer)
+(global-set-key (kbd "C-c n") 'switch-to-next-buffer)

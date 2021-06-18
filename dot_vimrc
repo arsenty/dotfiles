@@ -82,7 +82,7 @@ nnoremap <Leader>bn :<C-u>bn<cr>
 nnoremap <C-j>j :bnext<CR>
 
 " <Esc><Esc> Clear the search highlight in Normal mode
-nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
+"nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
 
 "Netrw Directory Listing
 nnoremap <leader>n :Vex <CR>
@@ -190,7 +190,7 @@ augroup END
 "endif
 
 "Plugin 'dhruvasagar/vim-dotoo'
-autocmd BufRead,BufNewFile *.org set filetype=dotoo
+au BufRead,BufNewFile *.org setf dotoo
 "
 "Plugin 'tpope/vim-fugitive'
 "Plugin 'airblade/vim-gitgutter'
@@ -205,3 +205,7 @@ autocmd BufRead,BufNewFile *.org set filetype=dotoo
 "Plugin 'easymotion/vim-easymotion'
 "Plugin 'tpope/vim-speeddating'
 "Plugin 'posva/vim-vue'
+
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+" c x c o
+" imap <C-Space> <C-X><C-O>
